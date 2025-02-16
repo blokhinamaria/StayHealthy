@@ -32,7 +32,7 @@ h2 {
 }
 
 a {
-    color: var(--gray-2);
+    color: var(--secondary-blue);
     font-weight: 700;
     text-decoration: none;
 }
@@ -64,20 +64,4 @@ a {
     text-decoration-thickness: 1.5px;
     text-underline-offset: 15%;
 }
-
-input::placeholder {
-    font-size: 0.875em; /* Adjust font size */
-    font-weight: 300;
-}
-
-#accountType {
-    color: var(--secondary-blue); /* Set your desired color */
-    font-size: 1em; /* Adjust font size */
-    font-weight: 600;
-}
-
-.form-container input {
-    color: var(--secondary-blue); /* Set your desired color */
-    font-size: 1em; /* Adjust font size */
-    font-weight: 600;
-}
+ 
