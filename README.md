@@ -15,5 +15,10 @@ Technologies Used
 HTML5
 CSS3
 JavaScript (ES6)
+<<<<<<< HEAD
 React.js
 Bootstrap
+=======
+React.js + Vite
+Bootstrap
+>>>>>>> 03.3_React
