@@ -19,8 +19,6 @@ body {
 
 }
 
-
-
 .flex-container {
     display: flex;
     flex-flow: column wrap;
@@ -29,8 +27,6 @@ body {
 
     height: 100vh;
     text-align: center;
-
-    
 }
 
 .title {
@@ -43,9 +39,8 @@ body {
     font-size: 4em;
     line-height: 100%;
     text-align: center;;
-    margin-bottom: 40px;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-bottom: 60px;
+    
     
 }
 
@@ -68,8 +63,9 @@ body {
 
     margin-left: 1em;
     margin-right: 1em;
+    margin-bottom: 20px;
 }
-button {
+.ctaButton {
     color: var(--white);
     font-weight: 700;
     font-size: 1em;
@@ -82,7 +78,7 @@ button {
 
     overflow: hidden;
 }
-button:hover {
+.ctaButton:hover {
     background-color: var(--accent);
     color: var(--primary);
 }
@@ -92,6 +88,9 @@ button:hover {
         font-size: 3em;
         margin-bottom: 20px;
     }
+    .title .text-highlight {
+        text-decoration: none;
+    }
     
     .description h4 {
         max-width: 280px;
@@ -100,9 +99,7 @@ button:hover {
     }
 }
 @media (max-width: 572px) {
-    .title .text-highlight {
-        text-decoration: none;
-    }
+    
 }
 
 @media (max-width: 355px) {
@@ -113,9 +110,9 @@ button:hover {
         }
     .description h4 {
         margin: 5px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
-    .cta button {
+    .ctaButton {
         padding: 16px 2.3em;
     }
 }
