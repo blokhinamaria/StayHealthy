@@ -40,20 +40,21 @@ body {
     fill: var(--secondary-blue);
 }
 
-.nav-link {
+.nav-item .nav-link {
     color: var(--white);
     text-align: center;
     font-size: 0.875em;
-    white-space: nowrap;    
+    white-space: nowrap;
+    font-weight: 700;
 }
 
-.nav-link:hover {
+.nav-item .nav-link:hover {
     color: var(--secondary-blue);
     text-decoration: underline;
     text-decoration-thickness: 2px;
 }
 
-.btn {
+#signUp, #login {
     padding: 8px 14px;
     border: none;
     border-radius: 7;
@@ -69,12 +70,12 @@ body {
     transition: background-color 0.5s ease
 }
 
-.btn:hover {
+#signUp:hover, #login:hover {
     background-color: var(--secondary-blue);
     color: var(--primary);
 }
 
-.outline-button {
+#login {
     padding: 7.5px 14px;
     border: 1px solid var(--white);
     
