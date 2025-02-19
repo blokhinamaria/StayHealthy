@@ -34,15 +34,15 @@ function Navbar () {
                                 <a className="nav-link" href="#">Health Tips</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="../Reviews/Reviews.html">Reviews</a>
+                                <a className="nav-link" href="#">Reviews</a>
                             </li>
                             <li className="nav-item">
-                                <a className="btn" id="signUp" href="../Sign_Up/SignUp.html">          
+                                <a className="btn" id="signUp" href="../Sign_Up/SignUp.jsx">          
                                     Sign Up
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="btn" id="login" href="../Login/Login.html">
+                                <a className="btn" id="login" href="../Login/Login.jsx">
                                     Login
                                 </a>
                             </li>

@@ -19,7 +19,7 @@ body {
     color: var(--primary);
 }
 
-h2 {
+#title {
     font-size: 2.5em;
     font-weight: 700;
     text-align: center;
@@ -31,7 +31,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-a {
+.description a {
     color: var(--accent);
     font-weight: 700;
     text-decoration: none;
@@ -46,7 +46,7 @@ a {
     font-weight: 700;
 }
 
-.btn-primary {
+#submit {
     background-color: var(--accent);
     border: none;
     border-radius: 7;
@@ -54,7 +54,7 @@ a {
 
     font-weight: 700;
 }
-.btn-primary:hover {
+#submit:hover {
     background-color: var(--secondary-blue);
 }
 
