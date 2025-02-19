@@ -1,8 +1,9 @@
 // Import necessary modules from React Library
+import React from 'react';
 import { useEffect, useState } from 'react';
 
 // Import Componenets fro routing from react-router-dom library
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Import Custom components
 import Navbar from './Components/Navbar/Navbar.jsx';
@@ -22,30 +23,14 @@ function App() {
 
 //Render the main app componenet
   return (
-    <>
-      <div className='App'>
-
-        {/* Set up BrowserRouter for routing */}
-        <BrowserRouter>
-
-          {/* Display Navbar  Componenet */}
-          <Navbar/>
-
-          {/* Set up the Routers for diffrent pages */}
-          
-          <LandingPage/>
-          {/* <Routes>
-            <Route path="/" element={<LandingPage/>}/>
-          </Routes> */}
-
-          <SignUp/>
-
-          <Login/>
-
-        </BrowserRouter>
-      </div>
-      
-    </>
+    <Router>
+      <Navbar/>
+      <Routes>
+          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+    </Router>
   );
 }
 

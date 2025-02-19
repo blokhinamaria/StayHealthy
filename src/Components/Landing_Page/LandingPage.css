@@ -9,14 +9,15 @@
     --gray-3: #577286;
 }
 
-body {
+.flex-container {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
     background: var(--secondary-lavander);
     background: linear-gradient(180deg, rgba(60,138,255,1) 0%, rgba(208,187,235,1) 54%, rgba(234,178,122,1) 100%);
-
+    min-height: 100vh;
+    min-width: 100vh;
 }
 
 .flex-container {
@@ -74,13 +75,13 @@ body {
     padding: 16px 80px;
     
     border: none;
-    border-radius: 8px;
+    border-radius: 50px;
 
     overflow: hidden;
+    transition: 500ms;
 }
 .ctaButton:hover {
-    background-color: var(--accent);
-    color: var(--primary);
+    border-radius: 0;
 }
 
 @media (max-width: 768px) {
@@ -97,9 +98,6 @@ body {
         text-align: left;
         
     }
-}
-@media (max-width: 572px) {
-    
 }
 
 @media (max-width: 355px) {

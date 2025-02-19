@@ -1,18 +1,20 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 import './Login.css' ;
 
 function Login () {
     return (
         <>
-            <div className="container">
+            <div className="container" style={{ marginTop: 150 }}>
                 <div className="row justify-content-center w-100">
                 <div className="form-container col-sm-8 text-center">
                     <div className="title">
                         <h2 id="title">Login</h2>
                     </div>
                     <div className="description">
-                        <p> New here? <a href="../Sign_Up/SignUp.html">Sign Up Here</a></p>
+                        <p> New here? <Link to="/signup">Sign Up Here</Link></p>
                     </div>
                     <div className="form-container text-start">
                         <form>

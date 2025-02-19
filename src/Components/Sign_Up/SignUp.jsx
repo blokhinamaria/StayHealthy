@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 import './SignUp.css';
 
 function SignUp () {
     return (
         <>
-        <div className="container">
+        <div className="container" style={{ marginTop: 150 }}>
             <div className="row justify-content-center w-100">
                 <div className="form-container col-sm-8 text-center">
                     <div className="title">
@@ -13,7 +14,7 @@ function SignUp () {
                     </div>
                     
                     <div className="description">
-                        <p> Already have an account? <a href="../Login/Login.html">Login Instead</a></p>
+                        <p> Already have an account? <Link to="/login">Login Instead</Link></p>
                     </div>
                     
                     <div className="form-container text-start">

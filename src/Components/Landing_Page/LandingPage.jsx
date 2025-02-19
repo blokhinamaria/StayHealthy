@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 import './LandingPage.css'
 
 function LandingPage () {
     return (
         <div>
-            <section className="flex-container">
+            <section className="flex-container" style={{ paddingTop: 150 }}>
                     <div className="title">
                             <h1>
                                 Your Health:<br/>
@@ -22,9 +23,9 @@ function LandingPage () {
                     </div>
         
                     <div className="cta">
-                        <a href="../Sign_Up/SignUp.html">
+                        <Link to="/signup">
                                 <button className="ctaButton">Let’s Get Started</button>
-                        </a>
+                        </Link>
                     </div>
                     
             </section>
