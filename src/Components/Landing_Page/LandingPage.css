@@ -10,17 +10,6 @@
 }
 
 .flex-container {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    background: var(--secondary-lavander);
-    background: linear-gradient(180deg, rgba(60,138,255,1) 0%, rgba(208,187,235,1) 54%, rgba(234,178,122,1) 100%);
-    min-height: 100vh;
-    min-width: 100vh;
-}
-
-.flex-container {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -28,6 +17,14 @@
 
     height: 100vh;
     text-align: center;
+    width: 100vw;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    background: var(--secondary-lavander);
+    background: linear-gradient(180deg, rgba(60,138,255,1) 0%, rgba(208,187,235,1) 54%, rgba(234,178,122,1) 100%);
 }
 
 .title {
@@ -81,7 +78,7 @@
     transition: 500ms;
 }
 .ctaButton:hover {
-    border-radius: 0;
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {

@@ -9,14 +9,14 @@ function Login () {
         <>
             <div className="container" style={{ marginTop: 150 }}>
                 <div className="row justify-content-center w-100">
-                <div className="form-container col-sm-8 text-center">
+                <div className="col-sm-8 text-center">
                     <div className="title">
                         <h2 id="title">Login</h2>
                     </div>
                     <div className="description">
                         <p> New here? <Link to="/signup">Sign Up Here</Link></p>
                     </div>
-                    <div className="form-container text-start">
+                    <div className="form-container mx-auto text-start">
                         <form>
                             
                             <div className="form-container" id="email">

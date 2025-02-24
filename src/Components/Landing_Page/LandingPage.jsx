@@ -26,8 +26,7 @@ function LandingPage () {
                         <Link to="/signup">
                                 <button className="ctaButton">Let’s Get Started</button>
                         </Link>
-                    </div>
-                    
+                    </div>   
             </section>
         </div>
     );
