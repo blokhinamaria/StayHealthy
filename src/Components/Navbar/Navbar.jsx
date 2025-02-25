@@ -1,9 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Navbar.css'
+import './Navbar.css';
 
-function Navbar () {
+
+
+const Navbar = () => {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [ username, setUsername ] = useState("");
+
+    const handleLogout = () => {
+        sessionStorage.removeItem("auth-token");
+        sessionStorage.removeItem("email");
+        sessionStorage.removeItem("name");
+        sessionStorage.removeItem("accountType");
+
+        // localStorage.removeItem("doctoData");
+
+        setIsLoggedIn(false);
+
+        //Remove th reviewFormData from local storage 
+        // for (let i=0; i < localStorage.length; i++) {
+        //     const key = localStorage.key(i);
+        //     if (key.startsWith("reviewFormData_")) {
+        //         localStorage.removeItem(key);
+        //     }
+        // }
+        // setEmail('');
+        window.location.reload();
+    };
+
+    useEffect(() => {
+        const storedName = sessionStorage.getItem("name");
+        if (storedName) {
+            setIsLoggedIn(true);
+            setUsername(storedName);
+        }
+    })
+
     return (
         <div>
             <nav className="navbar navbar-expand-md p-4 fixed-top ">
@@ -29,25 +64,47 @@ function Navbar () {
                 {/* Navbar Items */}
                 <div className="collapse navbar-collapse justify-content-end me-3" id="navbarSupportedContent">
                         <ul className="navbar-nav gap-4 align-items-center">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Appointments</Link>
-                            </li>
+                            
                             <li className="nav-item">
                                 <Link className="nav-link" to="/">Health Tips</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Reviews</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="btn" id="signUp" to="/signup">          
+                            
+                            
+                            {isLoggedIn ? (
+                                
+                                <>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/consultation">Instant Consultation</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/">Appointments</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/">Reviews</Link>
+                                </li>
+                                <li className='nav-item'>
+                                    <Link className="nav-link" to="/">Welcome, {username}</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="btn" id="logout" to="/" onClick={handleLogout}>
+                                    Logout
+                                    </Link>
+                                </li>
+                                </>
+
+                            ) : (
+                                <>
+                                <li className="nav-item">
+                                    <Link className="btn" id="signUp" to="/signup">          
                                     Sign Up
-                                </Link>
-                            </li>
-                            <li className="nav-item">
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
                                 <Link className="btn" id="login" to="/login">
                                     Login
                                 </Link>
-                            </li>
+                                </li>
+                                </>)} 
                         </ul>  
                 </div>
             </div>

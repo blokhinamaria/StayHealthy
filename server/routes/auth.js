@@ -7,6 +7,7 @@ import pkg from 'bcryptjs';
 import passport from 'passport';
 import pkgSign from 'jsonwebtoken';
 import User from '../models/User.js';
+import bcrypt from 'bcryptjs';
 
 const app = express();
 
@@ -18,6 +19,7 @@ const { sign } = pkgSign;
 config();
 
 const router = express.Router();
+
 
 // Initialize Passport Middleware
 passport.initialize();
@@ -90,39 +92,74 @@ router.post('/register', [
 });
 
 // Login Route
-router.post('/login', [
-    body('email', "Please Enter a Vaild Email").isEmail(),
-], async (req, res) => {
+// router.post('/login', [
+//     body('email', "Please Enter a Vaild Email").isEmail(),
+//     body('password', "Password is required").exists(),
+// ], async (req, res) => {
 
+//     const errors = validationResult(req);
+//     if (!errors.isEmpty()) {
+//         return res.status(400).json({ errors: errors.array() });
+//     }
+
+//     try {
+//         const { email, password } = req.body;
+//         const theUser = await User.findOne({ email });
+
+//         if (!theUser) {
+//             return res.status(401).json({ error: "Invalid Credentials" });
+//         }
+
+//         const checkHash = await bcrypt.compare(password, theUser.password);
+//         if (!checkHash) {
+//             return res.status(401).json({ error: "Invalid Credentials" });
+//         }
+
+//         req.session.email = email;
+//         console.log(`Session email set: ${req.session.email}`);
+
+//         const payload = { user: { id: theUser.id } };
+//         const authtoken = sign(payload, JWT_SECRET);
+
+//         return res.status(200).json({ authtoken });
+
+//     } catch (error) {
+//         console.error("Login Error:", error.message);
+//         return res.status(500).json({ error: "Internal Server Error", details: error.message });
+//     }
+// });
+
+router.post('/login', [
+    body('email', "Please Enter a Valid Email").isEmail(),
+    body('password', "Password is required").exists(),
+], async (req, res) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
+    if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
 
     try {
-        const theUser = await User.findOne({ email: req.body.email });
-        if (theUser) {
-            let checkHash = await compare(req.body.password, theUser.password);
-            if (checkHash) {
-                req.session.email = req.body.email;
-                console.log(req.session.email);
+        const { email, password } = req.body;
+        console.log("Login attempt for:", email);
 
-                const payload = { user: { id: theUser.id } };
-                const authtoken = sign(payload, JWT_SECRET);
-                return res.status(200).json({ authtoken });
-            } else {
-                return res.status(403).json({ error: "Invalid Credentials" });
+        const theUser = await User.findOne({ email });
+        if (!theUser) return res.status(401).json({ error: "Invalid Email" });
+
+        const isMatch = await bcrypt.compare(password, theUser.password);
+        if (!isMatch) return res.status(401).json({ error: "Invalid Password" });
+
+        const payload = { user: { id: theUser.id } };
+        const authtoken = sign(payload, JWT_SECRET);
+        return res.status(200).json({ authtoken,
+            user: {
+                name: theUser.name,
+                email: theUser.email,
+                accountType: theUser.accountType
             }
-        } else {
-            return res.status(403).json({ error: "Invalid Credentials" });
-        }
+         });
 
     } catch (error) {
-        console.error(error);
-        return res.status(500).send("Internal Server Error");
+        console.error("Login Error:", error);
+        return res.status(500).json({ error: "Internal Server Error", details: error.message });
     }
 });
-
-// Other routes for update, user info, etc...
 
 export default router;
