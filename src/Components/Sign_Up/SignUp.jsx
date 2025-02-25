@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css';
 
 
-// import { API_URL } from './src/config.js';
+import { API_URL } from '../../config.js';
+
 
 const SignUp = () => {
 
@@ -16,7 +17,7 @@ const SignUp = () => {
     const [accountType, setAccountType] = useState('');
     const [showerr, setShowerr] = useState('');
     const navigate = useNavigate();
-    const API_URL = "http://localhost:8181";
+    // const API_URL = "http://localhost:8181"; used originally to test the connectivity
 
     //password for test $wcq6F7Mzw$U
 
@@ -26,7 +27,7 @@ const SignUp = () => {
     
         let data;
         try {
-          const response = await fetch(`${API_URL}/api/auth/register`, {
+          const response = await fetch(`${API_URL}api/auth/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -47,7 +48,7 @@ const SignUp = () => {
             
           const json = await response.json();
           console.log('Success:', json);
-          console.log('Success:', data);
+          
       
           // Store user data in session storage
           if (json.authtoken) {
