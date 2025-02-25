@@ -10,6 +10,7 @@ import Navbar from './Components/Navbar/Navbar.jsx';
 import LandingPage from './Components/Landing_Page/LandingPage.jsx';
 import SignUp from './Components/Sign_Up/SignUp.jsx';
 import Login from './Components/Login/Login.jsx';
+import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/consultation" element={<InstantConsultation />} />
         </Routes>
     </Router>
   );

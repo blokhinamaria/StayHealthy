@@ -71,7 +71,11 @@ const Navbar = () => {
                             
                             
                             {isLoggedIn ? (
+                                
                                 <>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/consultation">Instant Consultation</Link>
+                                </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/">Appointments</Link>
                                 </li>
