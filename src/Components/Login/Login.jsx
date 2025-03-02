@@ -51,6 +51,7 @@ const Login = () => {
           if (json.authtoken) {
             sessionStorage.setItem('auth-token', json.authtoken);
             sessionStorage.setItem('name', json.user.name);
+            sessionStorage.setItem('phone', json.user.phone);
             sessionStorage.setItem('email', json.user.email);
             sessionStorage.setItem('accountType', json.user.accountType);
             navigate('/');
