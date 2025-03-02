@@ -23,7 +23,7 @@ const FindDoctorSearch = () => {
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultsHidden(true);
-        navigate(`/consultation?speciality=${encodeURIComponent(speciality)}`);
+        navigate(`/search?speciality=${encodeURIComponent(speciality)}`);
     }
  
     return (
