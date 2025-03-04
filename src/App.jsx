@@ -12,10 +12,13 @@ import SignUp from './Components/Sign_Up/SignUp.jsx';
 import Login from './Components/Login/Login.jsx';
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation.jsx';
 import BookingConsultation from './Components/BookingConsultation/BookingConsultation.jsx';
+import ApptNotification from './Components/ApptNotification/ApptNotification.jsx'
+import ReviewForm from './Components/ReviewForm/ReviewForm.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css'
+
 
 
 
@@ -27,13 +30,18 @@ function App() {
   return (
     <Router>
       <Navbar/>
+      
       <Routes>
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/consultation" element={<InstantConsultation />} />
           <Route path="/search" element={<BookingConsultation />} />
+          <Route path="/reviews" element={<ReviewForm />} />
         </Routes>
+
+        {/* <ApptNotification/> */}
+
     </Router>
   );
 }

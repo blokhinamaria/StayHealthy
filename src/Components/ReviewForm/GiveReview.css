@@ -1,0 +1,44 @@
+
+.form-intro h2, .form-intro p {
+    margin: 0;
+}
+
+.close-btn {
+    padding-top: 2px;
+    padding-right: 15px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    top: 1;
+    right: 1;
+}
+
+.close-btn:hover {
+    background-color: #D0BBEB;
+    border-radius: 100%;
+}
+
+label {
+    margin-top: 20px;
+}
+
+.submit-btn {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 50px;
+    transition: 500ms;
+    background-color: #F2994A;
+}
+
+.submit-btn:hover {
+    border-radius: 0;
+    background-color: #F2994A;
+}
+
+.feedback-form {
+    text-align: left;
+}
+
+.success-message {
+    margin-top: 30px;
+    color: green;
+}

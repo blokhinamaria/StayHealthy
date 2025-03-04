@@ -1,0 +1,21 @@
+.appointment-card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: left;
+
+    width: 400px;    
+    background-color: #092C4C;
+    color: white;
+    padding: 5%;
+    
+    border-top-left-radius: 70px;
+    
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.appointment-card p {
+   margin: 0; 
+}
