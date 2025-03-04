@@ -1,0 +1,44 @@
+.review-form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+
+}
+
+.review-title {
+    margin-bottom: 25px;
+}
+
+.review-table table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.review-table th, .review-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.review-table th {
+    background-color: #ddd;
+}
+
+.btn-secondary {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.btn-secondary:disabled {
+    background-color: grey;
+    opacity: 30%;
+}
+
+.popup-content {
+    margin-top: 110px !important;
+    padding: 0;
+    border: none;
+    margin-top: 110px;
+  }
+

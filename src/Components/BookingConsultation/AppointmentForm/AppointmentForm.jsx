@@ -18,6 +18,11 @@ const AppointmentForm = ({doctorName, doctorSpeciality, onSubmit }) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         onSubmit({ name, phoneNumber, appointmentDate, appointmentTime });
+        localStorage.setItem('Patient name', name);
+        localStorage.setItem('Doctor name', doctorName);
+        localStorage.setItem('Speciality', doctorSpeciality);
+        localStorage.setItem('appointmentDate', appointmentDate);
+        localStorage.setItem('appointmentTime', appointmentTime);
     };
 
     //Generate available time slots
