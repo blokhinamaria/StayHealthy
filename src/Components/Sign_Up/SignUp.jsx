@@ -54,6 +54,7 @@ const SignUp = () => {
           if (json.authtoken) {
             sessionStorage.setItem('auth-token', json.authtoken);
             sessionStorage.setItem('name', name);
+            sessionStorage.setItem('phone', phone);
             sessionStorage.setItem('email', email);
             sessionStorage.setItem('accountType', accountType);
             navigate('/');

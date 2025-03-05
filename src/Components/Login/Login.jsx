@@ -10,6 +10,7 @@ const Login = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState ("");
     const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
 
 
     const navigate = useNavigate();
@@ -31,7 +32,8 @@ const Login = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              name: name,  
+              name: name,
+              phone: phone,  
               email: email,
               password: password,
             }),

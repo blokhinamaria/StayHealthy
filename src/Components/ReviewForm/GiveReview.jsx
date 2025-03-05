@@ -62,17 +62,17 @@ const GiveReview = ({ doctor, onClose, onSubmit }) => {
                     {/* Display warning message if not all fields are filled */}
                     {showWarning && <p className="warning" style={{ color: 'red'}}>Please fill out all fields.</p>}
                     
-                    <div>
-                        <label htmlFor="name">Your Name</label>
+                    <div className="form-container">
+                        <label className="form-label" htmlFor="name">Your Name</label>
                         <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
                     </div>
-                    <div>
-                        <label htmlFor="review">Review</label>
+                    <div className="form-container">
+                        <label className="form-label" htmlFor="review">Review</label>
                         <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
                     </div>
 
-                    <div>
-                        <label htmlFor="rating">Rating</label>
+                    <div className="form-container">
+                        <label className="form-label" htmlFor="rating">Rating</label>
                         <input 
                             type="number"
                             id="rating"

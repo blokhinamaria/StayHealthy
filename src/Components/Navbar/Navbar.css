@@ -70,7 +70,23 @@ body {
     transition: background-color 0.5s ease
 }
 
-#signUp:hover, #login:hover {
+#dropdown {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 7;
+    white-space: nowrap;
+
+    background-color: var(--primary);
+    color: var(--white);
+
+    font-family: "Inter";
+    font-size: 0.875em;
+    font-weight: 700;
+
+    transition: background-color 0.5s ease
+}
+
+#signUp:hover, #login:hover, #dropdown:hover {
     background-color: var(--secondary-blue);
     color: var(--primary);
 }
@@ -81,6 +97,23 @@ body {
     
     background-color: var(--primary);
     color: var(--white);
+}
+
+#dropdown-menu {
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+}
+
+#dropdown-item {
+    font-family: "Inter";
+    font-size: 0.875em;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+#dropdown-item:hover {
+    background-color: var(--secondary-lavander);
 }
 
 .navbar-toggler {

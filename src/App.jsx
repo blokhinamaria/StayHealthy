@@ -14,6 +14,7 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import BookingConsultation from './Components/BookingConsultation/BookingConsultation.jsx';
 import ApptNotification from './Components/ApptNotification/ApptNotification.jsx'
 import ReviewForm from './Components/ReviewForm/ReviewForm.jsx';
+import ProfileCard from './Components/ProfileCard/ProfileCard.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/consultation" element={<InstantConsultation />} />
           <Route path="/search" element={<BookingConsultation />} />
           <Route path="/reviews" element={<ReviewForm />} />
+          <Route path="/profile" element={<ProfileCard />} />
         </Routes>
 
         {/* <ApptNotification/> */}
