@@ -1,0 +1,43 @@
+.profile-card {
+    margin-top: 110px;
+    color: var(--primary);
+    width: 300px;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 30px;
+    text-align: left;
+}
+
+#btn-cancel {
+    background-color: var(--white);
+    color: var(--secondary-blue);
+}
+
+#btn-cancel:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.profile-info h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.profile-info p {
+     /* Set your desired color */
+    font-size: 1.25em; /* Adjust font size */
+    font-weight: 600;
+}
+
+.update-message {
+    color: green;
+}
+
+

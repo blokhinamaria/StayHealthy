@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 import './Navbar.css';
 
@@ -12,8 +13,9 @@ const Navbar = () => {
 
     const handleLogout = () => {
         sessionStorage.removeItem("auth-token");
-        sessionStorage.removeItem("email");
         sessionStorage.removeItem("name");
+        sessionStorage.removeItem("phone");
+        sessionStorage.removeItem("email");
         sessionStorage.removeItem("accountType");
 
         // localStorage.removeItem("doctoData");
@@ -83,7 +85,17 @@ const Navbar = () => {
                                     <Link className="nav-link" to="/reviews">Reviews</Link>
                                 </li>
                                 <li className='nav-item'>
-                                    <Link className="nav-link" to="/">Welcome, {username}</Link>
+                                    <Dropdown>
+                                        <Dropdown.Toggle id="dropdown"> 
+                                        Welcome, {username}
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu id='dropdown-menu' >
+                                            <Dropdown.Item id='dropdown-item' href='/profile'>Profile
+                                                {/* <Link to="/profile">My Profile</Link> */}
+                                            </Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                    
                                 </li>
                                 <li className="nav-item">
                                     <Link className="btn" id="logout" to="/" onClick={handleLogout}>

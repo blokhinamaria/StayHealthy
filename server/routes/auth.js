@@ -151,6 +151,7 @@ router.post('/login', [
         return res.status(200).json({ authtoken,
             user: {
                 name: theUser.name,
+                phone: theUser.phone,
                 email: theUser.email,
                 accountType: theUser.accountType
             }
