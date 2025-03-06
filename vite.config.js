@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/StayHealthy/',
   build: {
     target: 'esnext', // Use modern JavaScript
-    minify: 'terser', // Better minification than default 'esbuild'
+    minify: 'esbuild',
     cssCodeSplit: true, // Split CSS for better caching
     sourcemap: false, // Set to true for debugging, false for smaller bundle
     rollupOptions: {
