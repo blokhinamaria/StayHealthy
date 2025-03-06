@@ -10,15 +10,3 @@ Search & Filter: Find the right doctor based on specialty, location, or ratings.
 Appointment Booking: Schedule consultations with ease.
 Responsive Design: Optimized for use on all devices.
 Accessibility: Designed to be user-friendly and inclusive for all users.
-
-Technologies Used
-HTML5
-CSS3
-JavaScript (ES6)
-<<<<<<< HEAD
-React.js
-Bootstrap
-=======
-React.js + Vite
-Bootstrap
->>>>>>> 03.3_React
