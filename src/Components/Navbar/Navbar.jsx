@@ -68,7 +68,7 @@ const Navbar = () => {
                         <ul className="navbar-nav gap-4 align-items-center">
                             
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Health Tips</Link>
+                                <Link className="nav-link" to="/StayHealthy">Health Tips</Link>
                             </li>
                             
                             
@@ -101,7 +101,7 @@ const Navbar = () => {
                                     
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="btn" id="logout" to="/" onClick={handleLogout}>
+                                    <Link className="btn" id="logout" to="/StayHealthy" onClick={handleLogout}>
                                     Logout
                                     </Link>
                                 </li>

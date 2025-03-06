@@ -34,7 +34,7 @@ function App() {
       <Navbar/>
       
       <Routes>
-          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/StayHealthy" element={<LandingPage/>}/>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/consultation" element={<InstantConsultation />} />
