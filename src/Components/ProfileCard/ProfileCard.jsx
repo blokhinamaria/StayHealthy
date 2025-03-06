@@ -60,7 +60,7 @@ const ProfileCard = () => {
                             
                             <div className="form-container">
                                 <label htmlFor="phone" className="form-label">Phone Number</label>
-                                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" className="form-control" id="phone" placeholder={phone}  aria-describedby="phoneHelp"/>
+                                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" className="form-control" id="phone" placeholder={phone}  aria-describedby="phoneHelp" />
                                 {/* {showerr ? (
                                     <div className="err" style={{ color: "red"}}>{showerr}</div>
                                     ) : (

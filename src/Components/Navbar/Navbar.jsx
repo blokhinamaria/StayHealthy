@@ -90,8 +90,11 @@ const Navbar = () => {
                                         Welcome, {username}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu id='dropdown-menu' >
-                                            <Dropdown.Item id='dropdown-item' href='/profile'>Profile
+                                            <Dropdown.Item id='dropdown-item' href='/profile'>Your Profile
                                                 {/* <Link to="/profile">My Profile</Link> */}
+                                            </Dropdown.Item>
+                                            <Dropdown.Item id='dropdown-item' href='/reports'>Your Reports
+                                                
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
