@@ -25,7 +25,7 @@ app.use(express.json());
 // CORS - Allow only frontend requests from localhost:5173
 const allowedOrigins = [
   "http://localhost:5173", // Adjust if your frontend runs on a different port
-  "https://blokhinamaria.github.io/",
+  "https://blokhinamaria.github.io",
 ];
 
 // CORS - Allow frontend requests from localhost:5173
@@ -38,6 +38,7 @@ app.use(cors({
     }
   },
   methods: "GET,POST,PUT,DELETE", // Adjust as needed
+  credentials: true, // If using cookies or authentication
   allowedHeaders: 'Content-Type,Authorization', // Optional: Specify allowed headers
 }));
 
