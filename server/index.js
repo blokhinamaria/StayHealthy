@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-
+// CORS - Allow only frontend requests from localhost:5173
 const allowedOrigins = [
   "http://localhost:5173", // Adjust if your frontend runs on a different port
   "https://blokhinamaria.github.io/",
@@ -40,7 +40,6 @@ app.use(cors({
   methods: "GET,POST,PUT,DELETE", // Adjust as needed
   allowedHeaders: 'Content-Type,Authorization', // Optional: Specify allowed headers
 }));
-
 
 
 // Connect to MongoDB
