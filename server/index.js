@@ -22,10 +22,22 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-// CORS - Allow only frontend requests from localhost:5173
+
+const allowedOrigins = [
+  "http://localhost:5173", // Adjust if your frontend runs on a different port
+  "https://blokhinamaria.github.io/",
+];
+
+// CORS - Allow frontend requests from localhost:5173
 app.use(cors({
-  origin: 'http://localhost:5173', // Only allow requests from this origin
-  methods: 'GET,POST,PUT,DELETE', // Optional: Specify allowed HTTP methods
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow request
+    } else {
+      callback(new Error("Not allowed by CORS")); // Block request
+    }
+  },
+  methods: "GET,POST,PUT,DELETE", // Adjust as needed
   allowedHeaders: 'Content-Type,Authorization', // Optional: Specify allowed headers
 }));
 
