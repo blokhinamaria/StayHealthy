@@ -1,6 +1,5 @@
 // Import necessary modules from React Library
 import React from 'react';
-import { useEffect, useState } from 'react';
 
 // Import Componenets fro routing from react-router-dom library
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -34,14 +33,13 @@ function App() {
       <Navbar/>
       
       <Routes>
-          <Route path="/StayHealthy" element={<LandingPage/>}/>
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/consultation" element={<InstantConsultation />} />
-          <Route path="/search" element={<BookingConsultation />} />
-          <Route path="/reviews" element={<ReviewForm />} />
-          <Route path="/profile" element={<ProfileCard />} />
-          <Route path="/reports" element={<Reports />} />
+          <Route path="/StayHealthy/" element={<LandingPage/>}/>
+          <Route path="/StayHealthy/signup" element={<SignUp />} />
+          <Route path="/StayHealthy/login" element={<Login />} />
+          <Route path="/StayHealthy/search" element={<BookingConsultation />} />
+          <Route path="/StayHealthy/reviews" element={<ReviewForm />} />
+          <Route path="/StayHealthy/profile" element={<ProfileCard />} />
+          <Route path="/StayHealthy/reports" element={<Reports />} />
         </Routes>
 
         {/* <ApptNotification/> */}

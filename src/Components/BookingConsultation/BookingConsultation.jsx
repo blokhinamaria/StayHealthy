@@ -3,36 +3,58 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import FindDoctorSearch from "./FindDoctorSearch/FindDoctorSearch.jsx";
 import DoctorCard from "./DoctorCard/DoctorCard.jsx";
 
+import doctors from "../../data/doctors.js" //doctor database
+
+
 
 
 const BookingConsultation = () => {
 
     const [searchParams] = useSearchParams();
-    const [doctors, setDoctors] = useState([]);
+    // const [doctors, setDoctors] = useState([]);
     const [filteredDoctors, setFilteredDoctors] = useState([]);
     const [isSearched, setIsSearched] = useState(false);
 
+    const [searchedSpeciality, setSearchedSpeciality] = useState("");
+
+    //This logic fetches the data from an API
+    // const getDoctorsDetails = () => {
+    //     fetch('https://api.npoint.io/9a5543d36f1460da2f63')
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             setDoctors(data);
+    //             const specialityParam = searchParams.get('speciality');
+    //             if (specialityParam) {
+    //                 const filtered = data.filter(
+    //                     (doctor) =>
+    //                         doctor.speciality.toLowerCase() ===
+    //                         specialityParam.toLowerCase()
+    //                 );
+    //                 setFilteredDoctors(filtered);
+    //                 setIsSearched(true);
+    //             } else {
+    //                 setFilteredDoctors([]);
+    //                 setIsSearched(false);
+    //             }
+    //         })
+    //         .catch((err) => console.log(err));
+    // };
+
+    //This logic fetches the data from the local file
     const getDoctorsDetails = () => {
-        fetch('https://api.npoint.io/9a5543d36f1460da2f63')
-            .then((res) => res.json())
-            .then((data) => {
-                setDoctors(data);
-                const specialityParam = searchParams.get('speciality');
-                if (specialityParam) {
-                    const filtered = data.filter(
-                        (doctor) =>
-                            doctor.speciality.toLowerCase() ===
-                            specialityParam.toLowerCase()
-                    );
-                    setFilteredDoctors(filtered);
-                    setIsSearched(true);
-                } else {
-                    setFilteredDoctors([]);
-                    setIsSearched(false);
-                }
-            })
-            .catch((err) => console.log(err));
+        const specialityParam = searchParams.get("speciality");
+        if (specialityParam) {
+            const filtered = doctors.filter((doctor) => doctor.speciality.toLowerCase() === specialityParam.toLowerCase());
+            setFilteredDoctors(filtered);
+            setIsSearched(true);
+            setSearchedSpeciality(specialityParam);
+        } else {
+            setFilteredDoctors([]);
+            setIsSearched(false);
+        }
     };
+
+
     const handleSearch = (searchText) => {
         if (searchText === '') {
             setFilteredDoctors([]);
@@ -48,7 +70,8 @@ const BookingConsultation = () => {
         }
     };
      const navigate = useNavigate();
-        useEffect(() => {
+    
+     useEffect(() => {
             getDoctorsDetails();
             // Uncomment if login auth required:
             // const authtoken = sessionStorage.getItem("auth-token");
@@ -61,19 +84,22 @@ const BookingConsultation = () => {
         <>
             <div className='searchpage-container'>
             <FindDoctorSearch onSearch={handleSearch}/>
-            <div className='search-results-container'>
+            <div className='search-results-container' style={{marginTop: 80}}>
                 {isSearched && (
                     <center>
-                        <h2>{filteredDoctors.length} doctors are available near you</h2>
+                        
                     
                     {filteredDoctors.length > 0 ? (
-                        filteredDoctors.map((doctor, index) => (
+                        <>
+                        <p className='description'>{filteredDoctors.length} {filteredDoctors.length !== 1 ? (`${searchedSpeciality} Specialists`) : (`${searchedSpeciality} Specialist`)} are available near you</p>
+                        {filteredDoctors.map((doctor, id) => (
                             <DoctorCard
                                 className="doctorCard"
                                 {...doctor}
-                                key={index}
+                                key={id}
                             />
-                        ))
+                        ))}
+                        </>
                     ) : (
                         <p>No doctors found</p>
                     )}

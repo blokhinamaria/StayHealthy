@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { API_URL } from '../../config.js';
 
-import './Login.css' ;
 
 const Login = () => {
     // State variables for email and password
@@ -75,11 +74,11 @@ const Login = () => {
             <div className="container" style={{ marginTop: 150 }}>
                 <div className="row justify-content-center w-100">
                 <div className="col-sm-8 text-center">
-                    <div className="title">
-                        <h2 id="title">Login</h2>
+                    <div className="intro">
+                        <h2>Login</h2>
                     </div>
                     <div className="description">
-                        <p> New here? <Link to="/signup">Sign Up Here</Link></p>
+                        <p> New here? <Link to="/StayHealthy/signup">Sign Up Here</Link></p>
                     </div>
                     <div className="form-container mx-auto text-start">
                         <form onSubmit={login}>
@@ -93,12 +92,9 @@ const Login = () => {
                                 <label htmlFor="password" className="form-label">Password</label>
                                 <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" className="form-control" id="password" placeholder="Enter your password" required/>  
                             </div>
-                            <button type="submit" className="btn btn-primary w-100" id="submit">Submit</button>
+                            <button type="submit" className="button w-100" id="submit">Login</button>
                             <div className="text-center mt-4">
-                                <a id="forgotPassword" href="#">Forgot Password?</a>
-                            </div>
-                            <div className="text-center mt-3">
-                                <a id="reset" href="#">Reset</a>
+                                <a className="secondary-link" id="forgotPassword" href="#">Forgot Password?</a>
                             </div>
                         </form>
                     </div>

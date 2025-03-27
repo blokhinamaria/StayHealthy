@@ -1,25 +1,23 @@
-
-
-.searchContainer {
+/* .searchContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-}
+  } */
 
-.searchBarBox {
+/* .searchBarBox {
     display: flex;
     align-items: center;
-    width: 430px;
+    width: 450px;
     position: absolute;
     margin-top: 25px;
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0,.1) 0 - 1px 0 0 inset;
     border-radius: 5px;
     height: 100vh;
-}
+} */
 
-.searchBar {
+/* .searchBar {
     height: 40px;
     width: 100%;
     padding: 6px 20px 5px 10px;
@@ -31,9 +29,9 @@
     border-top-right-radius:0;
     border-bottom-right-radius:0;
     border:1px solid rgb(59, 58, 58);
-}
+} */
 
-.searchIcon {
+/* .searchIcon {
     border: 1px solid #ddd;
     border-right: none;
     height: 40px;
@@ -44,9 +42,9 @@
     border: 1px solid rgb(59, 58, 58);
     z-index: -99;
 
-}
+} */
 
-.searchDropdown {
+/* .searchDropdown {
     position: absolute;
     top: 55%;
     left: 0;
@@ -55,9 +53,9 @@
     height: 420px;
     margin-top: 2px;
     border: 1px solid #555;
-}
+} */
 
-.searchDropdownItem {
+/* .searchDropdownItem {
     height: 60px;
     display: flex;
     align-items: center;
@@ -71,18 +69,6 @@
 
 .searchDropdownItem:hover {
     background-color: #f0f0f5;
-}
+} */
 
-.searchDropdownItem>span:nth-of-type(1) {
-    font-size: 14px;
-    color: #414146;
-}
 
-.searchDropdownItem>span:nth-of-type(2) {
-    font-size: 11px;
-    flex-grow: 1;
-    color: #787887;
-    text-align: right;
-    text-transform: uppercase;
-    justify-self: flex-end;
-}

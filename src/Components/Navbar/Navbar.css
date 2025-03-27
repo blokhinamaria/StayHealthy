@@ -1,36 +1,3 @@
-/*
-// <weight>: Use a value from 100 to 900
-// <uniquifier>: Use a unique and descriptive class name
-
-.inter-<uniquifier> {
-    font-family: "Inter", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  }
-  */
-
-/*Color Scheme*/
-
-:root {
-    --primary: #092C4C;
-    --secondary-blue: #3C8AFF;
-    --secondary-lavander: #D0BBEB;
-    --accent: #F2994A;
-    --white: #ffffff;
-    --gray-1: #BCCEDC;
-    --gray-2: #87A0B2;
-    --gray-3: #577286;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 0.875em;
-}
-
 .navbar {
     background-color: var(--primary);
     color: var(--white);
@@ -40,122 +7,132 @@ body {
     fill: var(--secondary-blue);
 }
 
+
+/* NavBar links */
 .nav-item .nav-link {
     color: var(--white);
     text-align: center;
-    font-size: 0.875em;
+    font-size: 1em;
     white-space: nowrap;
     font-weight: 700;
+    transition: color 300ms ease;
 }
 
 .nav-item .nav-link:hover {
     color: var(--secondary-blue);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
 }
 
-#signUp, #login, #logout {
-    padding: 8px 14px;
-    border: none;
-    border-radius: 7;
-    white-space: nowrap;
-
-    background-color: var(--accent);
-    color: var(--primary);
-
-    font-family: "Inter";
-    font-size: 0.875em;
-    font-weight: 700;
-
-    transition: background-color 0.5s ease
-}
-
-#dropdown {
-    padding: 8px 14px;
-    border: none;
-    border-radius: 7;
-    white-space: nowrap;
-
-    background-color: var(--primary);
+.nav-item .nav-link:focus {
     color: var(--white);
-
-    font-family: "Inter";
-    font-size: 0.875em;
-    font-weight: 700;
-
-    transition: background-color 0.5s ease
 }
-
-#signUp:hover, #login:hover, #dropdown:hover {
-    background-color: var(--secondary-blue);
-    color: var(--primary);
-}
-
-#login, #logout {
-    padding: 7.5px 14px;
-    border: 1px solid var(--white);
-    
-    background-color: var(--primary);
+.navbar-nav .nav-link.active {
     color: var(--white);
+}
+
+/* Dropdown Menu */
+#dropdown-toggle:hover {
+    color: var(--secondary-blue);
+    background-color: transparent;
+}
+
+#dropdown-toggle:focus {
+    color: var(--white);
+    background-color: transparent;
 }
 
 #dropdown-menu {
     background-color: var(--white);
     border: 1px solid var(--primary);
-    border-radius: 8px;
+    border-radius: 7px;
 }
 
 #dropdown-item {
-    font-family: "Inter";
-    font-size: 0.875em;
     font-weight: 700;
+    font-size: 0.875em;
     color: var(--primary);
+    padding: 20px;
 }
 
 #dropdown-item:hover {
     background-color: var(--secondary-lavander);
 }
 
+/* Buttons */
+#signup {
+    padding: 12px 16px;
+    white-space: nowrap;
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+#signup:hover {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+}
+
+#login {
+    padding: 12px 16px;
+    white-space: nowrap;
+    background-color: var(--secondary-blue);
+    color: var(--white);
+}
+
+#login:hover {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+
+
+/* Toggle Button */
 .navbar-toggler {
     width: auto;
     aspect-ratio: 1 / 1;
     padding: 8px;
     border: none;
     border-radius: 50%;
-    transition: background-color 0.8s ease
+    transition: background-color 0.3s ease;
+    background-color: transparent;
 }
 
 .navbar-toggler:hover {
     background-color: var(--accent);
-
+    outline: none;
+    box-shadow: none;
 }
 
 .navbar-toggler:active {
-    outline: none; /* Remove default focus outline */
-    box-shadow: none; /* Remove Bootstrap’s default glow */
     background-color: var(--accent);
+    outline: none;
+    box-shadow: none;
 }
 
 .navbar-toggler:focus {
-        outline: none; /* Remove default focus outline */
-        box-shadow: none; /* Remove Bootstrap’s default glow */
+    outline: none;
+    box-shadow: none;
 }
 
 @media (max-width: 767px) {
-    .navbar-collapse .navbar-nav {
+
+    .navbar-collapse {
+        margin-top: 20px;
+    }
+
+    .navbar-collapse .nav-item {
+        width: 100%;
+        font-size: 1.25em;
+    }
+
+    .navbar-collapse .nav-link,
+    .navbar-collapse .btn {
         display: block;
         width: 100%;
-    }
-    
-    .navbar-collapse .nav-link {
-        margin-top: 20px; /* Add space between items */
-        font-size: 1.25em;
+        text-align: center;
+        padding: 12px; /* Increase padding for better touch target */
     }
 
-    .navbar-collapse .btn {
-        margin-top: 20px;
-        font-size: 1.25em;
-        width: 100%;
+    .navbar-collapse .btn:hover {
+        background-color: var(--secondary-blue);
+        color: var(--white);
     }
 }
-

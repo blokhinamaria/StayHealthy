@@ -1,4 +1,4 @@
-import React, {use, useState} from "react";
+import React, {use, useState, useEffect} from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
 import './SignUp.css';
@@ -9,6 +9,8 @@ import { API_URL } from '../../config.js';
 
 const SignUp = () => {
 
+    //password for test $wcq6F7Mzw$U
+
     //State variables using useState hook
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -17,15 +19,22 @@ const SignUp = () => {
     const [accountType, setAccountType] = useState('');
     const [showerr, setShowerr] = useState('');
     const navigate = useNavigate();
-    // const API_URL = "http://localhost:8181"; used originally to test the connectivity
 
-    //password for test $wcq6F7Mzw$U
+    //Check if logged in
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    
+    useEffect(() => {
+      const storedName = sessionStorage.getItem("name");
+          if (storedName) {
+              setIsLoggedIn(true);
+              }
+            })
 
     //Function to handle form submission
     const register = async (e) => {
         e.preventDefault(); // prevent default form submission
     
-        let data;
+        
         try {
           const response = await fetch(`${API_URL}api/auth/register`, {
             method: 'POST',
@@ -72,16 +81,33 @@ const SignUp = () => {
       };
 
     return (
-        <>
+      <>
+        {isLoggedIn ? (
+          
+            <div className="container" style={{ marginTop: 150 }}>
+              <div className="row justify-content-center w-100">
+                <div className="col-sm-8 text-center">
+                  <div className="intro">
+                    <h2>You already have an account</h2>
+                  </div>
+                
+                  <div className="description">
+                    <p>If you need to create another account, Logout and Sign Up again </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      ) : (
+        <div>
         <div className="container" style={{ marginTop: 150 }}>
             <div className="row justify-content-center w-100">
                 <div className="col-sm-8 text-center">
-                    <div className="title">
-                        <h2 id="title">Sign Up</h2>
+                    <div className="intro">
+                        <h2>Sign Up</h2>
                     </div>
                     
                     <div className="description">
-                        <p> Already have an account? <Link to="/login">Login Instead</Link></p>
+                        <p> Already have an account? <Link to="/StayHealthy/login">Login Instead</Link></p>
                     </div>
                     
                     <div className="form-container mx-auto text-start">
@@ -134,17 +160,16 @@ const SignUp = () => {
                                 )}
                             </div>
                             
-                            <button type="submit" className="btn btn-primary w-100" id="submit" disabled={accountType === "Doctor"}>Submit</button>
-                            
-                            <div className="text-center mt-3">
-                                <a id="reset" href="#">Reset</a>
-                            </div>
+                            <button type="submit" className="button w-100" id="submit" disabled={accountType === "Doctor"}>Create Account</button>
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        </>
+        </div>
+      )}
+      </> 
     );
 };
 

@@ -41,10 +41,11 @@ const AppointmentForm = ({doctorName, doctorSpeciality, onSubmit }) => {
 
     return (
         <>
-            <form onSubmit={handleFormSubmit} className="appointment-form">
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
+            <form onSubmit={handleFormSubmit} className="appointment-form mt-3 text-start">
+                <div className="form-container">
+                    <label className="form-label" htmlFor="name">Patient Name</label>
                     <input 
+                        className="form-control"
                         type="text"
                         id="name"
                         value={name}
@@ -53,21 +54,10 @@ const AppointmentForm = ({doctorName, doctorSpeciality, onSubmit }) => {
                         pattern="^[A-Za-z\s]+$"
                         title="Only letters and spaces are allowed"/>                    
                 </div>
-                <div className="form-group">
-                    <label htmlFor="phone" >Phone Number</label>
+                <div className="form-container">
+                    <label className="form-label" htmlFor="date">Date of Appointment</label>
                     <input
-                        type="tel"
-                        id="phoneNumber"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                        required
-                        pattern="^\d{10}$"
-                        title="Enter a 10-digit phone number"
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="date">Date of Appointment</label>
-                    <input
+                        className="form-control"
                         type="date"
                         id="date"
                         value={appointmentDate}
@@ -79,9 +69,10 @@ const AppointmentForm = ({doctorName, doctorSpeciality, onSubmit }) => {
                             .split("T")[0]}
                     />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="timeSlot">Time</label>
+                <div className="form-container">
+                    <label htmlFor="timeSlot" className="form-label">Time</label>
                     <select
+                        className="form-select"
                         id="time"
                         value={appointmentTime}
                         onChange={(e) => setAppointmentTime(e.target.value)}
@@ -92,7 +83,20 @@ const AppointmentForm = ({doctorName, doctorSpeciality, onSubmit }) => {
                         ))}
                     </select>
                 </div>
-                <button type="submit">Book Now</button>
+                <div className="form-container">
+                    <label className="form-label" htmlFor="phone" >Phone Number</label>
+                    <input
+                        className="form-control"
+                        type="tel"
+                        id="phoneNumber"
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        required
+                        pattern="^\d{10}$"
+                        title="Enter a 10-digit phone number"
+                    />
+                </div>
+                <button type="submit" id="submit" className="button w-100">Book Now</button>
             </form>
         </>
     );
