@@ -48,7 +48,7 @@ passport.deserializeUser((id, cb) => {
     cb(null, id);
 });
 
-// Route 1: Registering A New User: POST: http://localhost:8181/api/auth/register
+// Route 1: Registering A New User
 router.post('/register', [
     body('name', "Username should be at least 4 characters.").isLength({ min: 4 }),
     body('phone', "Phone Number Should Be 10 Digits.").isLength({ min: 10 }),
@@ -91,43 +91,6 @@ router.post('/register', [
     }
 });
 
-// Login Route
-// router.post('/login', [
-//     body('email', "Please Enter a Vaild Email").isEmail(),
-//     body('password', "Password is required").exists(),
-// ], async (req, res) => {
-
-//     const errors = validationResult(req);
-//     if (!errors.isEmpty()) {
-//         return res.status(400).json({ errors: errors.array() });
-//     }
-
-//     try {
-//         const { email, password } = req.body;
-//         const theUser = await User.findOne({ email });
-
-//         if (!theUser) {
-//             return res.status(401).json({ error: "Invalid Credentials" });
-//         }
-
-//         const checkHash = await bcrypt.compare(password, theUser.password);
-//         if (!checkHash) {
-//             return res.status(401).json({ error: "Invalid Credentials" });
-//         }
-
-//         req.session.email = email;
-//         console.log(`Session email set: ${req.session.email}`);
-
-//         const payload = { user: { id: theUser.id } };
-//         const authtoken = sign(payload, JWT_SECRET);
-
-//         return res.status(200).json({ authtoken });
-
-//     } catch (error) {
-//         console.error("Login Error:", error.message);
-//         return res.status(500).json({ error: "Internal Server Error", details: error.message });
-//     }
-// });
 
 router.post('/login', [
     body('email', "Please Enter a Valid Email").isEmail(),

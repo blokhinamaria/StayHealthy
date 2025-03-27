@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-// CORS - Allow only frontend requests from localhost:5173
+// CORS - Allow only frontend requests from the following
 const allowedOrigins = [
   "http://localhost:5173", // Adjust if your frontend runs on a different port
   "https://blokhinamaria.github.io",
@@ -60,7 +60,7 @@ app.use('/api/auth', authRoutes);
 
 // Default route
 app.get('/', (req, res) => {
-  res.send('Hello World! Whats Up');
+  res.send('Hello World! This is a server setup by Maria Blokhina for her personal projects');
 });
 
 app.get('/test', (req, res) => {

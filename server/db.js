@@ -1,5 +1,8 @@
-import { connect } from 'mongoose';
+import { connect, set } from 'mongoose';
 const mongoURI =  "mongodb+srv://blokhinamaria:kyNUv8Raq4GltP82@cluster0.eldoh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+// Suppress Mongoose strictQuery warning
+set('strictQuery', false);
 
 const connectToMongo = async (retryCount) => {
     const MAX_RETRIES = 3;
