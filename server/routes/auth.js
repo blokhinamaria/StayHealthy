@@ -64,7 +64,7 @@ router.post('/register', [
     try {
         const checkMultipleUser1 = await User.findOne({ email: req.body.email });
         if (checkMultipleUser1) {
-            return res.status(403).json({ error: "A User with this email address already exists" });
+            return res.status(403).json({ error: "A User with this email address already exists. Try Login In Instead" });
         }
 
         const salt = await genSalt(10);

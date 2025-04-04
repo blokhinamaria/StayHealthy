@@ -1,21 +1,31 @@
-.profile-card {
-    margin-top: 110px;
-    color: var(--primary);
-    width: 300px;
-    height: 100%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    display: inline-block;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 30px;
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+    
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .profile-info {
+        justify-content: center;
+    }
+}
+
+.profile-info-text {
+    margin: auto;
     text-align: left;
+    min-width: 202px;
+}
+
+.profile-info-text h3 {
+    margin-bottom: 25px;
 }
 
 #btn-cancel {
-    background-color: var(--white);
-    color: var(--secondary-blue);
+    background-color: var(--secondary-blue);
+    color: var(--white);
 }
 
 #btn-cancel:hover {
@@ -23,21 +33,8 @@
     color: var(--white);
 }
 
-.profile-info h3 {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.profile-info p {
-     /* Set your desired color */
-    font-size: 1.25em; /* Adjust font size */
-    font-weight: 600;
-}
-
 .update-message {
-    color: green;
+    color: var(--accent);
 }
 
 

@@ -3,20 +3,6 @@
     margin: 0;
 }
 
-.close-btn {
-    padding-top: 2px;
-    padding-right: 15px;
-    padding-bottom: 6px;
-    padding-left: 15px;
-    top: 1;
-    right: 1;
-}
-
-.close-btn:hover {
-    background-color: #D0BBEB;
-    border-radius: 100%;
-}
-
 .submit-btn {
     margin-top: 30px;
     width: 100%;
@@ -37,4 +23,18 @@
 .success-message {
     margin-top: 30px;
     color: green;
+}
+
+.form-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    accent-color: var(--secondary-blue);
+}
+
+.form-rating-radio {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
 }

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import './FindDoctorSearch.css';
 import { useNavigate } from "react-router";
 
 const initSpeciality = [
@@ -16,13 +15,13 @@ const FindDoctorSearch = () => {
     const [doctorResultsHidden, setDoctorResultsHidden] = useState(true);
     const [searchDoctor, setSearchDoctor] = useState('');
     const [specialities] = useState(initSpeciality);
-
-    const navigate = useNavigate ();
+    
+    const navigate = useNavigate();
 
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultsHidden(true);
-        navigate(`/StayHealthy/search?speciality=${encodeURIComponent(speciality)}`);
+        navigate(`/search?speciality=${encodeURIComponent(speciality)}`);
     };
 
     const handleSearchBarClear = () => {
@@ -38,7 +37,7 @@ const FindDoctorSearch = () => {
                         alignItems: 'center', }}>
                 <center>
                     <img src="src/assets/Search.png" alt="Search image" width="100" height="100" className="m-3" ></img>
-                    <h2>Find a doctor by Specialty Near You</h2>
+                    <h2>Find a Doctor by Specialty Near You</h2>
                     <div className="searchContainer" style={{marginTop: 25}}>
                             <input 
                                 type="text"

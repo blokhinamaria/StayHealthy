@@ -1,42 +1,43 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import './ApptNotification.css'
 
 const ApptNotification = () => {
-    const [appointmentData, setAppointmentData] = useState('');
-
+    const appointments = useSelector(state => state.appointments.appointments);
+    const upcomingAppointments = appointments.filter(app => app.status === 'Scheduled');
+    
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    //visibility control
+    const [isOpen, setIsOpen] = useState(false);
+
     useEffect(() => {
-        if (sessionStorage.getItem('name')) {
-            setIsLoggedIn(true);
-        }
-
-        const storedData = {
-            patientName: localStorage.getItem("Patient name"),
-            doctorName: localStorage.getItem("Doctor name"),
-            doctorSpeciality: localStorage.getItem("Speciality"),
-            appointmentDate: localStorage.getItem("appointmentDate"),
-            appointmentTime: localStorage.getItem("appointmentTime"),
-        };
-        console.log("Retrieved from localStorage:", storedData);
-
-        if (storedData.appointmentDate && storedData.appointmentTime) {
-
-            setAppointmentData(storedData);
-        }
-        
-    }, []);
+        const storedName = sessionStorage.getItem("name");
+        if (storedName) {
+                setIsLoggedIn(true);
+            }
+        }, []);
 
     return (
         <>
-            {isLoggedIn && appointmentData && (
-                <div className="appointment-card">
-                    <h3>Upcoming Appointment</h3>
-                    <p>Doctor: <strong>{appointmentData.doctorName}, {appointmentData.doctorSpeciality}</strong></p>
-                    <p>Patient: <strong>{appointmentData.patientName}</strong></p>
-                    <p>Date: <strong>{appointmentData.appointmentDate}</strong></p>
-                    <p>Time: <strong>{appointmentData.appointmentTime}</strong></p>
+            {isLoggedIn && upcomingAppointments.length > 0 && (
+                <div className="appointment-notification">
+                    <div className={`notification-toggle ${isOpen ? "notification-toggle-wide" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+                        <h4 style={{ margin: "0" }}>{isOpen ? "Hide Appointments" : "Upcoming Appointments"}</h4>
+                    </div>
+                    
+                    {isOpen && <div className={`notification-container`}>
+                        {upcomingAppointments.map(appointment => (
+                            <div className="appointment-card" key={appointment.id}>
+                                <h5>Upcoming Appointment</h5>
+                                <p className="medium-body">With <strong>{appointment.doctorName}, {appointment.doctorSpeciality}</strong></p>
+                                <p className="medium-body">On <strong>{appointment.appointmentDate}</strong> At <strong>{appointment.appointmentTime}</strong></p>                     
+                                <p className="medium-body">For <strong>{appointment.patientName}</strong></p>
+                            </div>
+                        ))}       
+                    </div> }
+                    
                 </div>
             )}
         </>
