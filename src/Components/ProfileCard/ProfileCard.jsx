@@ -46,7 +46,7 @@ const ProfileCard = () => {
 
     return (
         <>
-            <div className="card-container" style={{marginTop: "110px"}}>
+            <div className="profile-card-container" style={{marginTop: "110px"}}>
                 <h2>My Profile</h2>
                 {updated && !isEditing && <p className="update-message">Profile Successfully Updated!</p>}
 
@@ -101,7 +101,7 @@ const ProfileCard = () => {
                         <h3>{user.phone}</h3>
                         <h4>Email Address</h4>
                         <h3>{user.email}</h3>
-                     <button className="secondary-button w-100" id="edit" onClick={() => setIsEditing(true)}>Edit my infromation</button>
+                     <button className="secondary-button w-100" id="edit" onClick={() => setIsEditing(true)}>Edit my information</button>
                     </div>
                     
                   

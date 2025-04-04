@@ -1,11 +1,11 @@
 // Import necessary modules from React Library
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store.js';
 
 
 // Import Componenets fro routing from react-router-dom library
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 //Import Custom components
 import Navbar from './Components/Navbar/Navbar.jsx';
@@ -28,11 +28,24 @@ import './App.css'
 // Function component for the main app
 function App() {
 
+  // Scroll to the top of the page when the route changes
+  const Wrapper = ({ children }) => {
+    const location = useLocation();
+  
+    useLayoutEffect(() => {
+      
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, [location.pathname]);
+  
+    return children;
+  };
+
 //Render the main app componenet
   return (
     <Provider store={store}>
     <Router basename="/StayHealthy/">
       <Navbar/>
+      <Wrapper>
         <main>
         <Routes>
           <Route path="/" element={<LandingPage/>}/>
@@ -46,7 +59,7 @@ function App() {
 
         <ApptNotification/>
         </main>
-        
+        </Wrapper>
         <Footer />
     </Router>
     </Provider>

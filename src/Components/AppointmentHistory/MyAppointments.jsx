@@ -60,52 +60,61 @@ const MyAppointments = () => {
     return (
         <>
             <div style={{ marginTop: '150px'}}>
-                    <h2>Scheduled Appoitments</h2>
+                    
 
                     <div className="container">
-                            {appointments.map((appointment) => (
-                                <div key={appointment.id} className={`appointment ${appointment.status === 'Cancelled' ? ('cancelled-appointment') : ('')}`}>
-                                    <div className="appointment-details-container">
-                                        <div className="appointment-detail">
-                                            <h4>Appointment on</h4>
-                                            <div>{appointment.appointmentDate}</div>
-                                            <div>{appointment.appointmentTime}</div>
-                                        </div>
-                                        <div className="appointment-detail">
-                                            <h4>Specialist</h4>
-                                            <div>{appointment.doctorName}</div>
-                                            <div>{appointment.doctorSpeciality}</div>
-                                        </div>
-                                        <div className="appointment-detail">
-                                            <h4>Patient</h4>
-                                            <div>{appointment.patientName}</div>
-                                            <div className="medium-body">{appointment.patientPhoneNumber}</div>
-                                        </div>
-                                    </div>
-                                   
-                                    <div>
-                                        {appointment.status === "Cancelled" ? (
-                                            <div  className="appointment-buttons">
-                                                <h3>{appointment.status}</h3>
-                                                <button className="small-button" id="remove" onClick={() => dispatch(removeAppointment(appointment.id))}>Remove</button>
+                    <h2>Upcoming Appointments</h2>
+                            {appointments.length > 0 ? (
+                                <>
+                                {appointments.map((appointment) => (
+                                    <div key={appointment.id} className={`appointment ${appointment.status === 'Cancelled' ? ('cancelled-appointment') : ('')}`}>
+                                        <div className="appointment-details-container">
+                                            <div className="appointment-detail">
+                                                <h4>Appointment on</h4>
+                                                <div>{appointment.appointmentDate}</div>
+                                                <div>{appointment.appointmentTime}</div>
                                             </div>
-                                            ) : (
-                                        <div className="appointment-buttons">
-                                            <h3>{appointment.status}</h3>
-                                            <button className="small-button" id="appointment-button" onClick={() => handleEdit()}>Edit</button>
-                                            <button className="small-button" id="appointment-button" onClick={() => {setOpenCancelPopup(true); setSelectedApp(appointment)}}>Cancel</button>
+                                            <div className="appointment-detail">
+                                                <h4>Specialist</h4>
+                                                <div>{appointment.doctorName}</div>
+                                                <div>{appointment.doctorSpeciality}</div>
+                                            </div>
+                                            <div className="appointment-detail">
+                                                <h4>Patient</h4>
+                                                <div>{appointment.patientName}</div>
+                                                <div className="medium-body">{appointment.patientPhoneNumber}</div>
+                                            </div>
                                         </div>
-
-                                        )}
+                                       
+                                        <div>
+                                            {appointment.status === "Cancelled" ? (
+                                                <div  className="appointment-buttons">
+                                                    <h3>{appointment.status}</h3>
+                                                    <button className="small-button" id="remove" onClick={() => dispatch(removeAppointment(appointment.id))}>Remove</button>
+                                                </div>
+                                                ) : (
+                                            <div className="appointment-buttons">
+                                                <h3>{appointment.status}</h3>
+                                                <button className="small-button" id="appointment-button" onClick={() => handleEdit()}>Edit</button>
+                                                <button className="small-button" id="appointment-button" onClick={() => {setOpenCancelPopup(true); setSelectedApp(appointment)}}>Cancel</button>
+                                            </div>
+    
+                                            )}
+                                        </div>
                                     </div>
-                                    
-                                </div>
-                            ))}
+                                ))}
+                                </>
+                            ) : (
+                                <p>You have no appointments scheduled
+                                </p>
+                            )}
+
+                            
                     </div>
             </div>
 
             <div className="table-container" style={{ marginTop: '100px'}}>
-                <h2>Attended Appointments</h2>
+                <h2>Previous Appointments</h2>
                 <div className="table">
                     <table>
                         <thead>

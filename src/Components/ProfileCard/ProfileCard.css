@@ -1,16 +1,21 @@
+.profile-card-container {
+    display: inline-block;
+    width: auto;
+    padding: 5%;
+    margin: 10px;
+
+    border: 1px solid var(--gray-1);
+    border-radius: 70px;
+    box-shadow: 0 2px 4px var(--opaque-primary); 
+    }
+
+
 .profile-info {
     display: flex;
-    flex-wrap: wrap;
-    margin: 50px;
-    
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: center;
     gap: 20px;
-}
-
-@media (max-width: 768px) {
-    .profile-info {
-        justify-content: center;
-    }
 }
 
 .profile-info-text {

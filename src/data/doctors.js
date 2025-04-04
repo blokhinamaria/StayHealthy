@@ -33,7 +33,7 @@ const doctors = [
         experience: 9,
         speciality: "Gynecology/Obstetrics",
         distance: "16 miles away",
-        image: "s.rc/assets/Doctor4.png"
+        image: "./assets/Doctor4.png"
     },
     {
         id: 5,
