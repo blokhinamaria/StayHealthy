@@ -27,10 +27,10 @@ const Footer = () => {
                 <div className='footer-container'>
                         <h4>Follow Us</h4>
                         <div>
-                        <img className='social-icon' src='src/assets/socials/Facebook.png'/>
-                        <img className='social-icon' src='src/assets/socials/Instagram.png'/>
-                        <img className='social-icon' src='src/assets/socials/LinkedIn.png'/>
-                        <img className='social-icon' src='src/assets/socials/X.png'/>
+                        <img className='social-icon' src='./assets/socials/Facebook.png'/>
+                        <img className='social-icon' src='./assets/socials/Instagram.png'/>
+                        <img className='social-icon' src='./assets/socials/LinkedIn.png'/>
+                        <img className='social-icon' src='./assets/socials/X.png'/>
                         </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const initSpeciality = [
 
 const FindDoctorSearch = () => {
     const [doctorResultsHidden, setDoctorResultsHidden] = useState(true);
-    const [searchDoctor, setSearchDoctor] = useState('');
+    const [searchDoctor, setSearchDoctor] = useState("");
     const [specialities] = useState(initSpeciality);
     
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const FindDoctorSearch = () => {
     };
 
     const handleSearchBarClear = () => {
-        setSearchDoctor('');
+        setSearchDoctor("");
     };
  
     return (
@@ -36,7 +36,7 @@ const FindDoctorSearch = () => {
                         justifyContent: 'center',
                         alignItems: 'center', }}>
                 <center>
-                    <img src="src/assets/Search.png" alt="Search image" width="100" height="100" className="m-3" ></img>
+                    <img src="./assets/Search.png" alt="Search image" width="100" height="100" className="m-3" ></img>
                     <h2>Find a Doctor by Specialty Near You</h2>
                     <div className="searchContainer" style={{marginTop: 25}}>
                             <input 
@@ -51,7 +51,7 @@ const FindDoctorSearch = () => {
                                 onDoubleClick={handleSearchBarClear}
                                 />
                             <div className="searchIcon">
-                                <img onClick={handleDoctorSelect} src="src/assets/SearchIcon.svg" alt="search" />
+                                <img src="./assets/SearchIcon.svg" alt="search" />
                             </div>
                         
                             <div className="searchDropdown" hidden={doctorResultsHidden}>

@@ -6,7 +6,7 @@ const doctors = [
         experience: 9,
         speciality: "Dental",
         distance: "12 miles away",
-        image: "src/assets/Doctor6.png"
+        image: "./assets/Doctor6.png"
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const doctors = [
         experience: 14,
         speciality: "Ear-nose-throat (ENT)",
         distance: "8 miles away",
-        image: "src/assets/Doctor3.png"
+        image: "./assets/Doctor3.png"
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const doctors = [
         experience: 9,
         speciality: "Ear-nose-throat (ENT)",
         distance: "22 miles away",
-        image: "src/assets/Doctor7.png"
+        image: "./assets/Doctor7.png"
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const doctors = [
         experience: 9,
         speciality: "Gynecology/Obstetrics",
         distance: "16 miles away",
-        image: "src/assets/Doctor4.png"
+        image: "s.rc/assets/Doctor4.png"
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const doctors = [
         experience: 40,
         speciality: "Gynecology/Obstetrics",
         distance: "11 miles away",
-        image: "src/assets/Doctor8.png"
+        image: "./assets/Doctor8.png"
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const doctors = [
         experience: 9,
         speciality: "Gynecology/Obstetrics",
         distance: "27 miles away",
-        image: "src/assets/Doctor1.png"
+        image: "./assets/Doctor1.png"
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ const doctors = [
         experience: 40,
         speciality: "Primary Care",
         distance: "5 miles away",
-        image: "src/assets/Doctor5.png"
+        image: "./assets/Doctor5.png"
     },
     {
         id: 8,
@@ -69,7 +69,7 @@ const doctors = [
         experience: 3,
         speciality: "Primary Care",
         distance: "19 miles away",
-        image: "src/assets/Doctor2.png"
+        image: "./assets/Doctor2.png"
     },
     {
         id: 9,
@@ -78,7 +78,7 @@ const doctors = [
         experience: 11,
         speciality: "Homeopathy",
         distance: "10 miles away",
-        image: "src/assets/Doctor6.png"
+        image: "./assets/Doctor6.png"
     },
     {
         id: 10,
@@ -87,7 +87,7 @@ const doctors = [
         experience: 11,
         speciality: "Homeopathy",
         distance: "14 miles away",
-        image: "src/assets/Doctor3.png"
+        image: "./assets/Doctor3.png"
     },
     {
         id: 11,
@@ -96,7 +96,7 @@ const doctors = [
         experience: 9,
         speciality: "Primary Care",
         distance: "25 miles away",
-        image: "src/assets/Doctor7.png"
+        image: "./assets/Doctor7.png"
     },
     {
         id: 12,
@@ -105,7 +105,7 @@ const doctors = [
         experience: 24,
         speciality: "Dental",
         distance: "18 miles away",
-        image: "src/assets/Doctor2.png"
+        image: "./assets/Doctor2.png"
     },
     {
         id: 13,
@@ -114,7 +114,7 @@ const doctors = [
         experience: 11,
         speciality: "Dental",
         distance: "7 miles away",
-        image: "src/assets/Doctor8.png"
+        image: "./assets/Doctor8.png"
     },
     {
         id: 14,
@@ -123,7 +123,7 @@ const doctors = [
         experience: 18,
         speciality: "Dental",
         distance: "13 miles away",
-        image: "src/assets/Doctor1.png"
+        image: "./assets/Doctor1.png"
     },
     {
         id: 15,
@@ -132,7 +132,7 @@ const doctors = [
         experience: 11,
         speciality: "Dermatology",
         distance: "21 miles away",
-        image: "src/assets/Doctor5.png"
+        image: "./assets/Doctor5.png"
     },
     {
         id: 16,
@@ -141,7 +141,7 @@ const doctors = [
         experience: 18,
         speciality: "Dermatology",
         distance: "20 miles away",
-        image: "src/assets/Doctor4.png"
+        image: "./assets/Doctor4.png"
     },
     {
         id: 17,
@@ -150,7 +150,7 @@ const doctors = [
         experience: 33,
         speciality: "Gynecology/Obstetrics",
         distance: "9 miles away",
-        image: "src/assets/Doctor2.png"
+        image: "./assets/Doctor2.png"
     },
     {
         id: 18,
@@ -159,7 +159,7 @@ const doctors = [
         experience: 40,
         speciality: "Physical therapy",
         distance: "6 miles away",
-        image: "src/assets/Doctor7.png"
+        image: "./assets/Doctor7.png"
     },
     {
         id: 19,
@@ -168,7 +168,7 @@ const doctors = [
         experience: 40,
         speciality: "Physical therapy",
         distance: "23 miles away",
-        image: "src/assets/Doctor1.png"
+        image: "./assets/Doctor1.png"
     },
     {
         id: 20,
@@ -177,7 +177,7 @@ const doctors = [
         experience: 24,
         speciality: "Primary Care",
         distance: "15 miles away",
-        image: "src/assets/Doctor3.png"
+        image: "./assets/Doctor3.png"
     }
 ];
 

@@ -51,7 +51,7 @@ const ProfileCard = () => {
                 {updated && !isEditing && <p className="update-message">Profile Successfully Updated!</p>}
 
                 <div className="profile-info">
-                    <div><img src="src/assets/Doctor1.png" alt={user.name} width="140" height="140" className="m-3"></img></div>
+                    <div><img src="./assets/Doctor1.png" alt={user.name} width="140" height="140" className="m-3"></img></div>
 
                     {isEditing ? (
                     <div className="mx-auto text-start">
