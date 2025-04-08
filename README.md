@@ -28,9 +28,9 @@ StayHealthy is a healthcare platform that connects patients with doctors through
 
 ## Live Demo
 [View StayHealthy on GitHub Pages](https://blokhinamaria.github.io/StayHealthy/)
+Access to full functionality requires signing up or logging in.
 
-> Access to full functionality requires signing up or logging in.
-**Sample Login:** Use these credentials to explore the app without signing up:
+> **Sample Login:** Use these credentials to explore the app without signing up:
 - **Email:** mm@mail.com  
 - **Password:** $wcq6F7Mzw$U
 
