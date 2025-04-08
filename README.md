@@ -1,4 +1,4 @@
-StayHealthy - Portfolio Project.
+StayHealthy - Capstone Project for IBM Front-End Developer Professional Certificate
 
 ## Overview
 StayHealthy is a healthcare platform that connects patients with doctors through a seamless, user-friendly interface. It offers features such as doctor search and appointment scheduling and management, aiming to enhance the patient-doctor interaction experience.
